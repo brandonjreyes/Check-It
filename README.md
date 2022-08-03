@@ -31,3 +31,13 @@ No more excuses; you are in control when your favorite media plays. It's time to
 
 
 ## Contact
+
+For any extra information, please contact:
+
+Matheos Woldesselasie: Github: https://github.com/matheosw, email: matheosw1@gmail.com.<br>
+Alejandra Lopez: Github: https://github.com/brandonjreyes, email: mariatxus9310@gmail.com.<br>
+Brandon Reyes: Github: https://github.com/brandonjreyes, email: brandon.jensen.reyes@gmail.com.<br>
+Misael Carreno: Github: https://github.com/mcarreno-11, email: m.n.carreno0@gmail.com.<br> 
+Kenny: Email: kflow21@gmail.com.<br>
+Andrew Sudhir: Email: sudhirandrew02@gmail.com.<br>
+
