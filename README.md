@@ -21,14 +21,29 @@ Introducing Check-it, a full stack web application that brings the easiest way t
 
 No more excuses; you are in control when your favorite media plays. It's time to play your best playlist with Check-it.
 
+## User Story
+
+AS a user who is passionate about movies and music 
+I WANT a watchlist webpage that displays my favorite movies, tv shows, and music.
+SO THAT I can add, save, or remove my favorite media content and have quick access to it.
+
+
+
 ## Demo
 
 ## Functionality
 
 ## Techologies Used
 
+
 ## Dependencies
 
+- dotenv
+- express
+- handlebars
+- moment
+- mysql2
+- sequelize
 
 ## Contact
 
