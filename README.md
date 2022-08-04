@@ -23,9 +23,9 @@ No more excuses; you are in control when your favorite media plays. It's time to
 
 ## User Story
 
-AS a user who is passionate about movies and music 
-I WANT a watchlist webpage that displays my favorite movies, tv shows, and music.
-SO THAT I can add, save, or remove my favorite media content and have quick access to it.
+AS a user who is passionate about movies and music<br>
+I WANT a watchlist webpage that displays my favorite movies, tv shows, and music <br>
+SO THAT I can add, save, or remove my favorite media content and have quick access to it <br>
 
 
 
