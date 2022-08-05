@@ -1,0 +1,41 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+/* Navigation Sidebar */
+#nav-sidebar-wrapper {
+    display: inline-block;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    overflow: auto;
+    background: lightgrey;
+    border: 2px solid green;
+    opacity: .9;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    text-indent: 10px;
+}
+
+/* Main Content */
+#content-wrapper {
+    align-items: center;
+    width: 80%;
+    display: inline-block;
+    position: absolute;
+    padding: 10px;
+    
+    border: 2px solid green;
+}
+
+#wrapper {}
