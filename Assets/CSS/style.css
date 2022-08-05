@@ -1,41 +1,31 @@
-html {
-    height: 100%;
+
+
+#wrapper {
+    /* Using CSS Grid (new tech requirement?) */
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 5fr 1fr;
 }
 
-body {
-    height: 100%;
-}
-
-/* Navigation Sidebar */
 #nav-sidebar-wrapper {
-    display: inline-block;
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    overflow: auto;
-    background: lightgrey;
-    border: 2px solid green;
-    opacity: .9;
+    background-color: lightgrey;
 }
 
-.sidebar-nav {
-    list-style: none;
-    padding: 0;
+#nav-sidebar-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
 }
 
-.sidebar-nav li {
-    text-indent: 10px;
+#search-sidebar-wrapper {
+    background-color: lightgray;
 }
 
-/* Main Content */
 #content-wrapper {
-    align-items: center;
-    width: 80%;
-    display: inline-block;
-    position: absolute;
-    padding: 10px;
-    
-    border: 2px solid green;
+    overflow-y: auto; /* Allows scrolling */
+
 }
 
-#wrapper {}
+#search-results{
+    overflow-y: auto;
+}
