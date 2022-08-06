@@ -12,17 +12,20 @@ body{
     justify-content: center;
     align-items: center;
     background-color: grey;
+    font-size: 210%;
+
 }
 
 .main-container {
     display: flex;
     justify-content: space-evenly;
-    background: antiquewhite;
+    background: white;
     height: 85vh;
 }
 
 .left-navbar, .card-holder, .result-section{
-    border: 1px solid black;
+    border: 0;
+    background-color: rgb(186, 176, 176);
 }
 
 .left-navbar, .result-section {
@@ -30,5 +33,34 @@ body{
 }
 
 .card-holder{
+    
     width: 48%;
+    margin: 2%;
+    align-items: center;
+    display: block;
+}
+
+.categories {
+    justify-content: left;
+    align-items: left;
+    display: flex;
+    background-color: antiquewhite;
+    margin: 20%;
+    
+}
+
+.list{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 10%;
+    font-size: 170%;
+}
+
+.placeholder{
+    justify-content: center;
+    align-items: center;
+    display:contents;
+    margin: 10%;
+    
 }
