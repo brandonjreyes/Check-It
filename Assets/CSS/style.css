@@ -11,8 +11,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    background-color: black;
     font-size: 210%;
+    
+
+}
+
+.check{ font-size: large;
+    color: aliceblue;
 
 }
 
@@ -46,6 +52,7 @@ body{
     display: flex;
     background-color: antiquewhite;
     margin: 20%;
+    flex-wrap: wrap;
     
 }
 
