@@ -12,7 +12,8 @@ const img_URL = 'https://image.tmdb.org/t/p/w185/';
 
 // search variables
 const searchInput = $('#search-input');
-const searchResults = $('#results-list');
+const searchResults = $('#search-results');
+const resultsList = $('#results-list');
 
 // check it variables 
 const checkIts = $('#check-its-list');
@@ -20,7 +21,6 @@ const checkIts = $('#check-its-list');
 // search button / enter functionality
 searchInput.keypress(function(event) {
     if (event.key === "Enter") {
-        console.log(searchInput.val());
         searchMovie(searchInput.val());
     }
 });
@@ -42,7 +42,7 @@ function generateSearchResults(data) {
         let title = movie.original_title;
         let result = $('<li></li>');
         createImage(img_URL + movie.poster_path, movie.original_title, result);
-        result.appendTo(searchResults);
+        result.appendTo(resultsList);
     }
 }
 
@@ -59,9 +59,9 @@ function movieDetails(data) {
 
 function retrieveCheckIts () {
     // PLACEHOLDER POSTERS
-    let checkits = $('<li></li>');
-    createImage(placeholderImgURL, 'placeholders', checkits);
-    checkits.appendTo(checkIts);
+    let checkitListEl = $('<li></li>');
+    createImage(placeholderImgURL, 'placeholders', checkitListEl);
+    checkitListEl.appendTo(checkIts);
 
 }
 
@@ -73,6 +73,6 @@ function createImage(imgURL, alt, location) {
     img.appendTo(location);
 }
 
-for (let i = 0; i < 37; i++) {
+for (let i = 0; i < 38; i++) {
     retrieveCheckIts();
 }
