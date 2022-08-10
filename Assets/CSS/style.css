@@ -2,23 +2,28 @@ body{
     padding: 0;
     margin: 0;
     height: 100%;
+   
 }
 
 .main-header{
-    width: 100vw;
-    height: 10vh;
+    width: 97vw;
+    height: 11vh;
     margin: 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     font-size: 210%;
     
 
 }
 
-.check{ font-size: large;
-    color: aliceblue;
+
+
+.logo{ justify-content: center;
+    display: flex;
+    align-items: center;
+   
 
 }
 
@@ -31,7 +36,7 @@ body{
 
 .left-navbar, .card-holder, .result-section{
     border: 0;
-    background-color: rgb(186, 176, 176);
+    background-color: rgb(220, 208, 208);
 }
 
 .left-navbar, .result-section {
@@ -50,9 +55,10 @@ body{
     justify-content: left;
     align-items: left;
     display: flex;
-    background-color: antiquewhite;
+    
     margin: 20%;
     flex-wrap: wrap;
+    
     
 }
 
@@ -70,4 +76,38 @@ body{
     display:contents;
     margin: 10%;
     
+}
+
+#nav-sidebar-wrapper {
+    background-color: lightgrey;
+}
+
+#nav-sidebar-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+}
+
+#search-sidebar-wrapper {
+    background-color: lightgray;
+}
+
+#content-wrapper {
+    overflow-y: auto; /* Allows scrolling */
+
+}
+
+#search-results{
+    overflow-y: auto;
+}
+
+.search-btn {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    height: 40px;
+    margin: 0px 8px;
+    padding: 0px;
+    color: rgb(29, 27, 27);
+    background: transparent;
+    border: 0px;
 }
