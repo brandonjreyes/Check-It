@@ -12,7 +12,10 @@ const img_URL = 'https://image.tmdb.org/t/p/w185/';
 
 // search variables
 const searchInput = $('#search-input');
-const searchResults = $('#search-results');
+const searchResults = $('#results-list');
+
+// check it variables 
+const checkIts = $('#check-its-list');
 
 // search button / enter functionality
 searchInput.keypress(function(event) {
@@ -37,7 +40,9 @@ function generateSearchResults(data) {
     for (let i = 0; i < 5; i++) {
         let movie = data.results[i];
         let title = movie.original_title;
-        createImage(img_URL + movie.poster_path, movie.original_title, searchResults);
+        let result = $('<li></li>');
+        createImage(img_URL + movie.poster_path, movie.original_title, result);
+        result.appendTo(searchResults);
     }
 }
 
@@ -52,10 +57,22 @@ function movieDetails(data) {
         })
 }
 
+function retrieveCheckIts () {
+    // PLACEHOLDER POSTERS
+    let checkits = $('<li></li>');
+    createImage(placeholderImgURL, 'placeholders', checkits);
+    checkits.appendTo(checkIts);
+
+}
+
 // puts an image on the page ( needs URL of img, alt tag for it, and where you want to append it to)
 function createImage(imgURL, alt, location) {
     let img = $('<img></img>');
     img.attr('src', imgURL);
     img.attr("alt", alt);
     img.appendTo(location);
+}
+
+for (let i = 0; i < 37; i++) {
+    retrieveCheckIts();
 }
