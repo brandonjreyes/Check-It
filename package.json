@@ -1,0 +1,24 @@
+{
+  "name": "check-it",
+  "version": "1.0.0",
+  "description": "click to see deployment: https://brandonjreyes.github.io/Check-It/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonjreyes/Check-It.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonjreyes/Check-It/issues"
+  },
+  "homepage": "https://github.com/brandonjreyes/Check-It#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
