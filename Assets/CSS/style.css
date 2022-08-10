@@ -1,31 +1,87 @@
-
+/* ALL */
 
 #wrapper {
     /* Using CSS Grid (new tech requirement?) */
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas: 
+    "nav-sidebar content search-sidebar";
 }
+
+/* HEADER */
+
+#header-wrapper {
+    grid-area: header;
+    background-color: darkgrey;
+    color: white;
+}
+
+/* NAV SIDEBAR */
 
 #nav-sidebar-wrapper {
     background-color: lightgrey;
+    grid-area: nav-sidebar;
+    padding: 10px;
 }
 
 #nav-sidebar-grid {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    height: 100vh;
 }
+
+/* MAIN CONTENT */
+
+#content-wrapper {
+    grid-area: content;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+#check-its-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+/* SEARCH AND RESULTS */
 
 #search-sidebar-wrapper {
     background-color: lightgray;
-}
-
-#content-wrapper {
-    overflow-y: auto; /* Allows scrolling */
-
+    grid-area: search-sidebar;
+    padding: 10px;
 }
 
 #search-results{
-    overflow-y: auto;
+    border: 3px, solid, black;
+}
+
+#search-and-type {
+    padding-bottom: 10px;
+}
+
+#search-type-select {
+}
+
+#search-input {
+}
+
+#search-results {
+    background-color: darkgrey;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+#results-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 0;
 }

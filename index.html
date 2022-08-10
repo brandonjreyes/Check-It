@@ -17,8 +17,15 @@
     <main>
         <div id="wrapper">
 
+            <!-- Header -->
+            
+
             <!-- Navigation Sidebar -->
+
             <div id="nav-sidebar-wrapper">
+                <h1>CHECK IT</h1>
+                <input id="username-input" type="text" placeholder="username..">
+                <input id="password-input" type="text" placeholder="password..">
                 <header>My Lists</header>
                 <div id="nav-sidebar-grid">
                     <div>Movies</div>
@@ -30,41 +37,33 @@
 
             <!-- Main Content -->
             <div id="content-wrapper">
-                <header>Main Content</header>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque modi voluptas deserunt necessitatibus
-                    quaerat consequuntur animi inventore molestiae, labore ex quod perferendis aliquam voluptatem, neque
-                    iusto facere ad? A vero nemo rem cum tempore reiciendis placeat saepe quibusdam sunt delectus ipsum,
-                    est, libero explicabo dignissimos soluta esse dolore architecto quas! Placeat aspernatur aliquid
-                    deserunt explicabo architecto. Necessitatibus, sed! Itaque, tempora fuga ipsam necessitatibus
-                    maiores sed adipisci nesciunt quasi hic impedit ex fugit dolorum quod, quis placeat unde non
-                    laudantium praesentium voluptate illum facilis. Laboriosam architecto repudiandae, iure mollitia
-                    corrupti, quod aut repellendus ipsum sapiente modi dolores, unde saepe? Nisi, quibusdam repellendus,
-                    at laboriosam dolores perspiciatis aperiam dolorum sit dolore deserunt distinctio nostrum voluptates
-                    deleniti, numquam quasi non temporibus magni sequi atque vero saepe? Consectetur esse maxime quasi
-                    quibusdam ab, cum, fugit corporis sint suscipit numquam repudiandae perspiciatis! Eaque accusantium
-                    quibusdam beatae cumque quisquam error eveniet dicta vitae, laboriosam ipsam quo aspernatur sapiente
-                    temporibus esse deleniti accusamus rerum voluptatum natus atque doloremque numquam quaerat sint.
-                    Adipisci facere itaque nulla ducimus ea doloribus odit qui omnis sint nesciunt corporis aperiam
-                    voluptate voluptatibus suscipit odio inventore assumenda, soluta repellat aspernatur consectetur
-                    recusandae deserunt! Ratione iure velit deleniti? Aut qui quisquam voluptatum commodi perferendis.
-                </p>
+                <ul id="check-its-list">
+                    
+                </ul>
             </div>
 
             <!-- Search/Add Sidebar -->
             <div id="search-sidebar-wrapper">
                 <header>Search Sidebar</header>
+
+                <!-- search type and search bar -->
                 <div id="search-and-type">
+                    <select name="search-type" id="search-type-select">
+                        <option value="movies">Movies</option>
+                        <option value="music">Music</option>
+                    </select>
                     <input id="search-input" type="text" placeholder="Search..">
                 </div>
+
+                <!-- search results area -->
                 <div id="search-results">
+                    <ul id="results-list">
+                    </ul>
                 </div>
             </div>
 
         </div>
     </main>
-
-
-
 </body>
 
 <!-- JQuery and JS link -->
