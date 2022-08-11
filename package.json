@@ -1,4 +1,5 @@
 {
+
   "name": "check-it",
   "version": "1.0.0",
   "description": "click to see deployment: https://brandonjreyes.github.io/Check-It/",
@@ -17,8 +18,13 @@
     "url": "https://github.com/brandonjreyes/Check-It/issues"
   },
   "homepage": "https://github.com/brandonjreyes/Check-It#readme",
+ 
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mysql2": "^2.3.3"
+    "express-handlebars": "^6.0.6",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+
   }
 }
