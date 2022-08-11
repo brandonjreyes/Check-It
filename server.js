@@ -1,11 +1,33 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
+const express = require ("express");
+const mysql = require ("mysql2");
 
+// create connection with db
+const db = mysql.createConnection({
+    host : 'localhost',
+    user : 'root',
+password : 'password',
+database : 'watchlist_db'
+});
 
-/*const routes = require('./controllers');
-const sequelize = require('./config/connection');*/
-
+// connect
+db.connect((err) => {
+    if(err){
+        throw err;
+    }
+    console.log('mysql connected');
+});
 const app = express();
-const PORT = process.env.PORT || 8080;
+
+//create Db
+app.get('/watch-list-contents', (req, res) => {
+    let sql= 'CREATE DATABASE movie';
+    db.query(sql, (err, result) => {
+        if(err) throw new err;
+        console.log(result);
+        res.send('Database created');
+    })
+})
+ app.listen('3000', () =>{
+    console.log('start port on 3000');
+ });
+ 
