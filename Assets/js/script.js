@@ -45,7 +45,7 @@ function generateSearchResults(data) {
         let title = movie.original_title;
         let result = $('<li></li>');
         createResultImage(img_URL + movie.poster_path, movie.id, result);
-        result.appendTo(resultsList);
+        result.appendTo(resultsList)
     }
 }
 
@@ -77,6 +77,57 @@ function createImage(imgURL, alt, location) {
     img.appendTo(location);
 }
 
+for (let i = 0; i < 38; i++) {
+    retrieveCheckIts();
+}
+//create img
+async function setImage(imgURL, alt, location) {
+
+    var response = await fetch(imgURL)
+    const reader = response.body.getReader();
+    var stream = await new ReadableStream({
+        start(controller) { 
+          return pump();
+          function pump() {
+            return reader.read().then(({ done, value }) => {
+              // When no more data needs to be consumed, close the stream
+              if (done) {
+                controller.close();
+                return;
+              }
+              // Enqueue the next data chunk into our target stream
+              controller.enqueue(value);
+              return pump();
+            });
+          }
+        }
+      })
+  
+    var res = new Response(stream)
+    var blob = await res.blob()
+    //$("#Rage-quit").attr("src", URL.createObjectURL(blob));
+    let img = $('<img></img>');
+    img.attr('src', URL.createObjectURL(blob));
+    img.attr("alt", alt);
+    img.appendTo(location);
+  }
+  
+
+//btn movies/music/tv shows
+
+var btnMovies= document.getElementById('btn-movies')
+var btnMusic= document.getElementById('btn-music')
+var btnTvShows= document.getElementById('btn-tv-shows')
+
+btnMovies.addEventListener('click', searchMovies)
+function searchMovies(){
+     var searchUrl = 'http://localhost:3000/watch-list-contents?tag=1&user=dgiraldo'
+    fetch(searchUrl)
+    .then(response => response.json())
+    .then(data => {
+        generateSearchResults(data);
+    })
+    
 // PLACEHOLDER FUNCTIONALITY -- FOR DEMO
 
 const tagInput = $("#tag-input");
@@ -122,5 +173,4 @@ function generateCheckIts (tag) {
     let checkitListEl = $('<li></li>');
     createImage(placeholderImgURL, 'placeholders', checkitListEl);
     checkitListEl.appendTo(checkIts);
-
 }
