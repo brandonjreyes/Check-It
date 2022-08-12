@@ -37,12 +37,12 @@ function searchMovie(search) {
 
 // creates movie posters in search result area
 function generateSearchResults(data) {
-    for (let i = 0; i < 5; i++) {
-        let movie = data.results[i];
-        let title = movie.original_title;
+    console.log('data', data)
+    for (let i = 0; i < data.length; i++) {
+        let movie = data [i];
         let result = $('<li></li>');
-        createImage(img_URL + movie.poster_path, movie.original_title, result);
-        result.appendTo(resultsList);
+        setImage( movie.image_url, movie.title, result);
+        result.appendTo(checkIts);
     }
 }
 
@@ -75,4 +75,52 @@ function createImage(imgURL, alt, location) {
 
 for (let i = 0; i < 38; i++) {
     retrieveCheckIts();
+}
+//create img
+async function setImage(imgURL, alt, location) {
+    
+    var response = await fetch(imgURL)
+    const reader = response.body.getReader();
+    var stream = await new ReadableStream({
+        start(controller) { 
+          return pump();
+          function pump() {
+            return reader.read().then(({ done, value }) => {
+              // When no more data needs to be consumed, close the stream
+              if (done) {
+                controller.close();
+                return;
+              }
+              // Enqueue the next data chunk into our target stream
+              controller.enqueue(value);
+              return pump();
+            });
+          }
+        }
+      })
+  
+    var res = new Response(stream)
+    var blob = await res.blob()
+    //$("#Rage-quit").attr("src", URL.createObjectURL(blob));
+    let img = $('<img></img>');
+    img.attr('src', URL.createObjectURL(blob));
+    img.attr("alt", alt);
+    img.appendTo(location);
+  }
+  
+
+//btn movies/music/tv shows
+
+var btnMovies= document.getElementById('btn-movies')
+var btnMusic= document.getElementById('btn-music')
+var btnTvShows= document.getElementById('btn-tv-shows')
+
+btnMovies.addEventListener('click', searchMovies)
+function searchMovies(){
+     var searchUrl = 'http://localhost:3000/watch-list-contents?tag=1&user=dgiraldo'
+    fetch(searchUrl)
+    .then(response => response.json())
+    .then(data => {
+        generateSearchResults(data);
+    })
 }
