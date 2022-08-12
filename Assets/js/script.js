@@ -24,6 +24,8 @@ const checkIts = $('#check-its-list');
 // search button / enter functionality
 searchInput.keypress(function(event) {
     if (event.key === "Enter") {
+        // reset results 
+        resultsList.empty();
         searchMovie(searchInput.val());
     }
 });
@@ -43,6 +45,7 @@ function generateSearchResults(data) {
     for (let i = 0; i < data.results.length; i++) {
         let movie = data.results[i];
         let title = movie.original_title;
+        
         let result = $('<li></li>');
         createResultImage(img_URL + movie.poster_path, movie.id, result);
         result.appendTo(resultsList);
@@ -62,6 +65,7 @@ function imgFromID(data) {
 
 // puts an image on the page ( needs URL of img, alt tag for it, and where you want to append it to)
 function createResultImage(imgURL, alt, location) {
+    
     let img = $('<img></img>');
     img.attr('src', imgURL);
     img.attr("alt", alt);
@@ -107,8 +111,8 @@ function addTag(tagName) {
 }
 
 function storeMovie(src) {
-    console.log(src);
-    localStorage.setItem(current_tag, JSON.stringify('src'));
+    localStorage.setItem(current_tag, JSON.stringify(src));
+    console.log(JSON.parse(localStorage));
 }
 
 function changeTag(tag) {
@@ -116,7 +120,9 @@ function changeTag(tag) {
     tagDisplay.text(tag);
 }
 
-updateCheckIts();
+function updateCheckIts() {
+    checkIts.empty();
+}
 
 function generateCheckIts (tag) {
     let checkitListEl = $('<li></li>');
