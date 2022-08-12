@@ -10,6 +10,9 @@ const query_URL = '&query=';
 const SFW_URL = '&include_adult=false';
 const img_URL = 'https://image.tmdb.org/t/p/w185/';
 
+// Global Tag State
+let current_tag = 'All';
+
 // search variables
 const searchInput = $('#search-input');
 const searchResults = $('#search-results');
@@ -37,17 +40,17 @@ function searchMovie(search) {
 
 // creates movie posters in search result area
 function generateSearchResults(data) {
-    console.log('data', data)
-    for (let i = 0; i < data.length; i++) {
-        let movie = data [i];
+    for (let i = 0; i < data.results.length; i++) {
+        let movie = data.results[i];
+        let title = movie.original_title;
         let result = $('<li></li>');
-        setImage( movie.image_url, movie.title, result);
-        result.appendTo(checkIts);
+        createResultImage(img_URL + movie.poster_path, movie.id, result);
+        result.appendTo(resultsList)
     }
 }
 
 // returns movie details
-function movieDetails(data) {
+function imgFromID(data) {
     let result1id = data.results[0].id;
     fetch(tmdb_detail_URL + result1id + tmdb_key)
         .then(response => response.json())
@@ -57,15 +60,16 @@ function movieDetails(data) {
         })
 }
 
-function retrieveCheckIts () {
-    // PLACEHOLDER POSTERS
-    let checkitListEl = $('<li></li>');
-    createImage(placeholderImgURL, 'placeholders', checkitListEl);
-    checkitListEl.appendTo(checkIts);
-
+// puts an image on the page ( needs URL of img, alt tag for it, and where you want to append it to)
+function createResultImage(imgURL, alt, location) {
+    let img = $('<img></img>');
+    img.attr('src', imgURL);
+    img.attr("alt", alt);
+    img.addClass("movie-add-btn");
+    img.attr("onclick", "storeMovie(this.src);");
+    img.appendTo(location);
 }
 
-// puts an image on the page ( needs URL of img, alt tag for it, and where you want to append it to)
 function createImage(imgURL, alt, location) {
     let img = $('<img></img>');
     img.attr('src', imgURL);
@@ -78,7 +82,7 @@ for (let i = 0; i < 38; i++) {
 }
 //create img
 async function setImage(imgURL, alt, location) {
-    
+
     var response = await fetch(imgURL)
     const reader = response.body.getReader();
     var stream = await new ReadableStream({
@@ -123,4 +127,50 @@ function searchMovies(){
     .then(data => {
         generateSearchResults(data);
     })
+    
+// PLACEHOLDER FUNCTIONALITY -- FOR DEMO
+
+const tagInput = $("#tag-input");
+const tagBtn = $('#newTagBtn');
+const movieAddBtn = $(".movie-add-btn");
+const tagText = $(".tag-text");
+const tagDisplay = $("#tag-display");
+
+tagBtn.click(function(event) {
+    addTag(tagInput.val());
+});
+
+movieAddBtn.click(function(event) {
+    storeMovie();
+    updateCheckIts();
+});
+
+$("#sidebar-tags").on('click','li', function () {
+    let selectedTag = ($(this).html());
+    changeTag(selectedTag);
+});
+
+function addTag(tagName) {
+    let tagNameEl = $('<li></li>')
+    tagNameEl.text(tagName);
+    tagNameEl.addClass('tag-text');
+    tagNameEl.appendTo($('#sidebar-tags'));
+}
+
+function storeMovie(src) {
+    console.log(src);
+    localStorage.setItem(current_tag, JSON.stringify('src'));
+}
+
+function changeTag(tag) {
+    current_tag = tag;
+    tagDisplay.text(tag);
+}
+
+updateCheckIts();
+
+function generateCheckIts (tag) {
+    let checkitListEl = $('<li></li>');
+    createImage(placeholderImgURL, 'placeholders', checkitListEl);
+    checkitListEl.appendTo(checkIts);
 }
