@@ -5,10 +5,13 @@ click to see deployment: https://brandonjreyes.github.io/Check-It/
 
 ## About
 
+Can't sleep? Bored around the house on a rainy day? Have too much freetime on your hands? Well most Americans would choose to go watch a movie, listen to music or hop on youtube. 
+
+the average American will watch 5,000 movies in their lifetime. That is way too many movies for anyone to remember Now most movies are about 2 hours long, which can add up really quickly over the years. Now wouldn’t you want a place to save all your favorite movies or a place to simply keep track of your screen time? CHECK IT allows you to do just that.
 
 Have you ever felt the frustration of forgetting the name of that new song you just discovered and can't recall it from your memory, like an earworm with no chance of materializing?
 
-Have you ever started casually watching a movie on tv and enjoyed it, only to forget the title when your classmate asks for a new Netflix suggestion?
+Have you ever started watching a movie and found it to be simply the greatest movie ever, only to forget the title when your friend or family member asks for a movie suggestion? Our website fixes this issue by allowing you to have a space to keep track of movies you’ve enjoyed, Included with this feature is the ability to save recommendations from others for movies you want to watch. Since our platform is independent of netflix or hbo or any of those big corporate companies, there isn’t a limitation for what movies you can add to your list. 
 
 Is that funny YouTube video from last summer still stuck in your head, but you can't remember what to search when you want to send it to your friend?
 
