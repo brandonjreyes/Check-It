@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS watchlist_db;
+CREATE DATABASE watchlist_db;

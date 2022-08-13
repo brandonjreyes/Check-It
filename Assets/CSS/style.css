@@ -1,26 +1,152 @@
 
+
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+   
+}
+
+.main-header{
+    width: 97vw;
+    height: 11vh;
+    margin: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    font-size: 210%;
+    
+
+}
+
+
+
+.logo{ justify-content: center;
+    display: flex;
+    align-items: center;
+   
+
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    height: 85vh;
+}
+
+.left-navbar, .card-holder, .result-section{
+    border: 0;
+    background-color: rgb(220, 208, 208);
+}
+
+.left-navbar, .result-section {
+    width: 23%;
+}
+
+.card-holder{
+    
+    width: 48%;
+    margin: 2%;
+    align-items: center;
+    display: block;
+}
+
+.categories {
+    justify-content: left;
+    align-items: left;
+    display: flex;
+    
+    margin: 20%;
+    flex-wrap: wrap;
+    
+    
+}
+
+.list{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 10%;
+    font-size: 170%;
+}
+
+.placeholder{
+    justify-content: center;
+    align-items: center;
+    display:contents;
+    margin: 10%;
+    
+}
+
+#nav-sidebar-wrapper {
+    background-color: lightgrey;
+}
+
+#nav-sidebar-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+}
+
+#search-sidebar-wrapper {
+    background-color: lightgray;
+}
+
+#content-wrapper {
+    overflow-y: auto; /* Allows scrolling */
+
+}
+
+#search-results{
+    overflow-y: auto;
+}
+
+.search-btn {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    height: 40px;
+    margin: 0px 8px;
+    padding: 0px;
+    color: rgb(29, 27, 27);
+    background: transparent;
+    border: 0px;
+}
+
+
+
 /* ALL */
 
 #wrapper {
     /* Using CSS Grid (new tech requirement?) */
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 6fr 2fr;
+    grid-template-columns: 1fr 5fr 1fr;
     grid-template-areas: 
     "nav-sidebar content search-sidebar";
 }
 
 /* NAV SIDEBAR */
 
+hr {
+    height: px;
+}
+
+#login-input{
+    padding-bottom: 10px;
+}
+
 #nav-sidebar-wrapper {
     background-color: #76ba99;
     grid-area: nav-sidebar;
+    min-width: 200px;
     padding: 10px;
 }
 
-#nav-sidebar-grid {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+#sidebar-tags{
+    padding-bottom: 10px;
+    list-style: none;
 }
 
 #login-input {
@@ -31,6 +157,7 @@
 
 #content-wrapper {
     background-color: #adcf9f;
+    min-width: 200px;
     grid-area: content;
     overflow-y: scroll;
     padding: 20px;
@@ -49,6 +176,7 @@
 /* SEARCH AND RESULTS */
 
 #search-sidebar-wrapper {
+    min-width: 200px;
     background-color: #76ba99;
     grid-area: search-sidebar;
     padding: 10px;
@@ -60,12 +188,6 @@
 
 #search-and-type {
     padding-bottom: 10px;
-}
-
-#search-type-select {
-}
-
-#search-input {
 }
 
 #search-results {
@@ -82,4 +204,8 @@
     gap: 6px;
     flex-wrap: wrap;
     padding: 10px;
+}
+
+.movie-add-btn, .tag-text {
+    cursor: pointer;
 }
